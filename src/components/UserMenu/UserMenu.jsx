@@ -3,7 +3,7 @@
 // import { useAuth } from 'hooks';
 
 export const UserMenu = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   //   const { user } = useAuth();
 
   return (
