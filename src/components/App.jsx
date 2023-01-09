@@ -1,4 +1,7 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from '../redux/auth/operations';
+import { useAuth } from '../hooks';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
@@ -12,7 +15,16 @@ const LoginPage = lazy(() => import('../pages/LogIn/LogIn'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
@@ -20,7 +32,7 @@ export const App = () => {
           path="register"
           element={
             <RestrictedRoute
-              redirectTo="contacts"
+              redirectTo="/contacts"
               component={<RegistrationPage />}
             />
           }
