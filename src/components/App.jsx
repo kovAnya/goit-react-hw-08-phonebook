@@ -1,7 +1,6 @@
-// import { lazy, useEffect } from 'react';
-import { lazy } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { refreshUser } from '../redux/auth/operations';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from '../hooks';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -16,12 +15,12 @@ const LoginPage = lazy(() => import('../pages/LogIn/LogIn'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
 
 export const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
