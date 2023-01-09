@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[680],{680:function(e,t,c){c.r(t);var r=c(329);t.default=function(){return(0,r.jsx)("div",{children:(0,r.jsx)("img",{src:"http://cdn.shopify.com/s/files/1/1134/1936/products/20200915_112050_1_grande.jpg?v=1600176468",alt:"welcome",width:"800"})})}}}]);
+//# sourceMappingURL=680.079f20b8.chunk.js.map
