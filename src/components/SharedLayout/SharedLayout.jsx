@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { AppBar } from 'components/AppBar/AppBar';
 import { Container } from './SharedLayout.styled';
 
-const SharedLayout = () => {
+export const SharedLayout = () => {
   return (
     <Container>
       <AppBar />
@@ -13,5 +13,3 @@ const SharedLayout = () => {
     </Container>
   );
 };
-
-export default SharedLayout;

@@ -5,8 +5,8 @@ import { useAuth } from '../hooks';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 
-const SharedLayout = lazy(() => import('./SharedLayout/SharedLayout'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
   import('../pages/Registration/Registration')
