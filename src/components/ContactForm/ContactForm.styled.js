@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px 40px;
   width: 180px;
   border: 1px solid #555;
@@ -19,4 +21,9 @@ export const FormBtn = styled.button`
   margin-left: auto;
   margin-top: 15px;
   padding: 4px;
+`;
+
+export const Heading = styled.h1`
+  margin-top: 55px;
+  text-align: center;
 `;
